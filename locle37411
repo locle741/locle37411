@@ -1,16 +1,18 @@
 #!/bin/bash
 
+yes | pkg update
+pkg install wget -y
+
+# Thiết lập quyền truy cập bộ nhớ
 if [ -e "/data/data/com.termux/files/home/storage" ]; then
     rm -rf /data/data/com.termux/files/home/storage
 fi
 termux-setup-storage
 
-yes | pkg update
-. <(curl -s https://raw.githubusercontent.com/u400822/setup-termux/refs/heads/main/termux-change-repo.sh)
-yes | pkg upgrade
-
+# Tải Frostware APK
 echo "📥 Đang tải Frostware APK..."
 wget -O /sdcard/Download/frostware.apk "https://cdn.discordapp.com/attachments/1394580806583975966/1396106204660498432/FrostwareGlobalCloneMcye_01_2.679.1763.apk?ex=687ce0b9&is=687b8f39&hm=ba518574bf8cd2233704701c991e2da17e439fdeffcf759af7fc8abf6033f5e7"
 
+# Tải MT2 APK
 echo "📥 Đang tải MT2 APK..."
 wget -O /sdcard/Download/mt2.apk "https://pan.mt2.cn/mt/MT2.18.5.apk"
