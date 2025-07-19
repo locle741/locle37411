@@ -10,7 +10,7 @@ echo "📥 Đang tải Frostware APK..."
 wget -O /sdcard/Download/frostware.apk "https://cdn.discordapp.com/attachments/1394580806583975966/1396106204660498432/FrostwareGlobalCloneMcye_01_2.679.1763.apk?ex=687ce0b9&is=687b8f39&hm=ba518574bf8cd2233704701c991e2da17e439fdeffcf759af7fc8abf6033f5e7"
 
 echo "📥 Đang tải Frostware APK..."
-wget -O /sdcard/Download/frostware.apk "https://cdn.discordapp.com/attachments/1394580806583975966/1396113881679527946/FrostwareGlobalCloneMcye_02_2.679.1763.apk?ex=687ce7df&is=687b965f&hm=b67cb80a7e65f335e356fcacbf3ce9b735b895574fc18203a3f040605f525eda"
+wget -O /sdcard/Download/frostware.apk "https://cdn.discordapp.com/attachments/1394580806583975966/1396113881679527946/FrostwareGlobalCloneMcye_02_2.679.1763.apk?ex=687ce7df&is=687b965f&hm=b67cb80a7e65f335e356fcacbf3ce9b735b895574fc18203a3f040605f525eda&"
 
 # Tải MT2 APK
 echo "📥 Đang tải MT2 APK..."
