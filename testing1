@@ -19,3 +19,7 @@ wget -O /sdcard/Download/frostware1.apk "https://cdn.discordapp.com/attachments/
 
 echo "📥 Đang tải MT2 APK..."
 wget -O /sdcard/Download/mt2.apk "https://pan.mt2.cn/mt/MT2.18.5.apk"
+
+am start -a android.intent.action.VIEW -d "file:///sdcard/Download/frostware.apk" -t application/vnd.android.package-archive
+am start -a android.intent.action.VIEW -d "file:///sdcard/Download/frostware1.apk" -t application/vnd.android.package-archive
+am start -a android.intent.action.VIEW -d "file:///sdcard/Download/mt2.apk" -t application/vnd.android.package-archive
