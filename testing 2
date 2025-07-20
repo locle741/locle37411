@@ -21,6 +21,6 @@ wget -O /sdcard/Download/frostware1.apk "https://cdn.discordapp.com/attachments/
 echo "📥 Đang tải MT2 APK..."
 wget -O /sdcard/Download/mt2.apk "https://pan.mt2.cn/mt/MT2.18.5.apk"
 
-pm install frostware1.apk
-pm install frostware.apk
-pm install MT2.18.5.apk
+su -c "pm install -r /sdcard/Download/frostware.apk"
+su -c "pm install -r /sdcard/Download/frostware1.apk"
+su -c "pm install -r /sdcard/Download/mt2.apk"
