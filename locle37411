@@ -7,13 +7,13 @@ termux-setup-storage
 yes | pkg update
 
 echo "📥 Đang tải CodeX APK..."
-wget -O /sdcard/Download/Codex1.apk "https://cold7.gofile.io/download/d0eba22f-09cb-498c-93b9-e00f9b41948f/CodeXGlobalClone(Mcye)%2006-2.681.805.apk.apk"
+wget -O /sdcard/Download/Codex1.apk "https://store2.gofile.io/download/ed394941-aba2-43ec-8c70-fa9eb91df801/CodeXGlobalClone(Mcye)%2003-2.681.805.apk.apk"
 echo "📥 Đang tải CodeX APK..."
-wget -O /sdcard/Download/Codex2.apk "https://cold7.gofile.io/download/d0eba22f-09cb-498c-93b9-e00f9b41948f/CodeXGlobalClone(Mcye)%2006-2.681.805.apk.apk"
+wget -O /sdcard/Download/Codex2.apk "https://store2.gofile.io/download/ed394941-aba2-43ec-8c70-fa9eb91df801/CodeXGlobalClone(Mcye)%2003-2.681.805.apk.apk"
 echo "📥 Đang tải CodeX APK..."
-wget -O /sdcard/Download/Codex3.apk "https://cold7.gofile.io/download/d0eba22f-09cb-498c-93b9-e00f9b41948f/CodeXGlobalClone(Mcye)%2006-2.681.805.apk.apk"
+wget -O /sdcard/Download/Codex3.apk "https://store2.gofile.io/download/ed394941-aba2-43ec-8c70-fa9eb91df801/CodeXGlobalClone(Mcye)%2003-2.681.805.apk.apk"
 echo "📥 Đang tải CodeX APK..."
-wget -O /sdcard/Download/Codex4.apk "https://cold7.gofile.io/download/d0eba22f-09cb-498c-93b9-e00f9b41948f/CodeXGlobalClone(Mcye)%2006-2.681.805.apk.apk"
+wget -O /sdcard/Download/Codex4.apk "https://store2.gofile.io/download/ed394941-aba2-43ec-8c70-fa9eb91df801/CodeXGlobalClone(Mcye)%2003-2.681.805.apk.apk"
 su -c "pm install -r /sdcard/Download/Codex1.apk"
 su -c "pm install -r /sdcard/Download/Codex2.apk"
 su -c "pm install -r /sdcard/Download/Codex3.apk"
