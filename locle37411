@@ -7,13 +7,13 @@ termux-setup-storage
 yes | pkg update
 
 echo "📥 Đang tải CodeX APK..."
-wget -O /sdcard/Download/Codex1.apk "https://shouko.store/CodexLite.apk"
+wget -O ~/storage/downloads/Codex.apk "https://shouko.store/CodexLite.apk"
 echo "📥 Đang tải CodeX APK..."
-wget -O /sdcard/Download/Codex2.apk "https://shouko.store/CodexLite.apk"
+wget -O ~/sdcard/Download/Codex2.apk "https://shouko.store/CodexLite.apk"
 echo "📥 Đang tải CodeX APK..."
-wget -O /sdcard/Download/Codex3.apk "https://shouko.store/CodexLite.apk"
+wget -O ~/sdcard/Download/Codex3.apk "https://shouko.store/CodexLite.apk"
 echo "📥 Đang tải CodeX APK..."
-wget -O /sdcard/Download/Codex4.apk "https://shouko.store/CodexLite.apk"
+wget -O ~/sdcard/Download/Codex4.apk "https://shouko.store/CodexLite.apk"
 su -c "pm install -r /sdcard/Download/Codex1.apk"
 su -c "pm install -r /sdcard/Download/Codex2.apk"
 su -c "pm install -r /sdcard/Download/Codex3.apk"
