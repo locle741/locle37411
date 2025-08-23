@@ -1,10 +1,20 @@
-su -c "pm install -r '/sdcard/Download/1.apk'"
-su -c "pm install -r '/sdcard/Download/2.apk'"
-su -c "pm install -r '/sdcard/Download/3.apk'"
-su -c "pm install -r '/sdcard/Download/4.apk'"
-su -c "pm install -r '/sdcard/Download/5.apk'"
-su -c "pm install -r '/sdcard/Download/6.apk'"
-su -c "pm install -r '/sdcard/Download/7.apk'"
-su -c "pm install -r '/sdcard/Download/8.apk'"
-su -c "pm install -r '/sdcard/Download/9.apk'"
-su -c "pm install -r '/sdcard/Download/10.apk'"
+#!/bin/bash
+
+
+APK_DIR="/sdcard/Download"
+
+APK_URL="https://shouko.store/CodexLite.apk"
+
+
+for i in {1..10}; do
+    APK_PATH="$APK_DIR/Codex$i.apk"
+    echo "📥 Đang tải $APK_PATH ..."
+    wget -O "$APK_PATH" "$APK_URL"
+done
+
+
+for i in {1..10}; do
+    APK_PATH="$APK_DIR/Codex$i.apk"
+    echo "📦 Đang cài đặt $APK_PATH ..."
+    su -c "pm install -r $APK_PATH"
+done
