@@ -1,7 +1,8 @@
 #!/bin/bash
 
 yes | pkg update
-pkg install -y aria2
+pkg install wget -y
+pkg install aria2 -y
 
 termux-setup-storage
 yes | pkg update
@@ -9,33 +10,19 @@ yes | pkg update
 BASE_URL="https://shouko.store"
 DEST_DIR="/sdcard/Download"
 
-echo "📥 Đang tải nhanh ArceusXLite1–10 ..."
-aria2c -x 16 -s 16 --continue=true --max-tries=5 -d "$DEST_DIR" \
-  "$BASE_URL/ArceusXLite1.apk" \
-  "$BASE_URL/ArceusXLite2.apk" \
-  "$BASE_URL/ArceusXLite3.apk" \
-  "$BASE_URL/ArceusXLite4.apk" \
-  "$BASE_URL/ArceusXLite5.apk" \
-  "$BASE_URL/ArceusXLite6.apk" \
-  "$BASE_URL/ArceusXLite7.apk" \
-  "$BASE_URL/ArceusXLite8.apk" \
-  "$BASE_URL/ArceusXLite9.apk" \
-  "$BASE_URL/ArceusXLite10.apk"
-
 for i in {1..10}; do
     FILE_NAME="ArceusXLite$i.apk"
     APK_PATH="$DEST_DIR/$FILE_NAME"
-    TMP_PATH="/data/local/tmp/$FILE_NAME"
 
-    if [ -s "$APK_PATH" ]; then
-        echo "📦 Copy $FILE_NAME vào /data/local/tmp ..."
-        su -c "cp '$APK_PATH' '$TMP_PATH' && chmod 644 '$TMP_PATH'"
+    echo "📥 Đang tải $FILE_NAME ..."
+    aria2c -x 16 -s 16 -o "$FILE_NAME" -d "$DEST_DIR" "$BASE_URL/$FILE_NAME"
 
+    if [ -f "$APK_PATH" ]; then
         echo "📦 Đang cài $FILE_NAME ..."
-        su -c "pm install -r '$TMP_PATH'"
+        su -c "pm install -r $APK_PATH"
     else
-        echo "❌ File $FILE_NAME chưa tải xong hoặc bị lỗi, bỏ qua."
+        echo "⚠️ Không tìm thấy $FILE_NAME (có thể file không tồn tại trên server)"
     fi
 done
 
-echo "✅ Hoàn tất tải & cài ArceusXLite"
+echo "✅ Hoàn tất tải & cài 10 file ArceusXLite"
