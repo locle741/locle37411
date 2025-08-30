@@ -10,7 +10,7 @@ BASE_URL="https://shouko.store"
 DEST_DIR="/sdcard/Download"
 
 echo "📥 Đang tải nhanh ArceusXLite1–10 ..."
-aria2c -x 16 -s 16 -d "$DEST_DIR" \
+aria2c -x 16 -s 16 --continue=true --max-tries=5 -d "$DEST_DIR" \
   "$BASE_URL/ArceusXLite1.apk" \
   "$BASE_URL/ArceusXLite2.apk" \
   "$BASE_URL/ArceusXLite3.apk" \
@@ -25,9 +25,17 @@ aria2c -x 16 -s 16 -d "$DEST_DIR" \
 for i in {1..10}; do
     FILE_NAME="ArceusXLite$i.apk"
     APK_PATH="$DEST_DIR/$FILE_NAME"
+    TMP_PATH="/data/local/tmp/$FILE_NAME"
 
-    echo "📦 Đang cài $FILE_NAME ..."
-    su -c "pm install -r $APK_PATH"
+    if [ -s "$APK_PATH" ]; then
+        echo "📦 Copy $FILE_NAME vào /data/local/tmp ..."
+        su -c "cp '$APK_PATH' '$TMP_PATH' && chmod 644 '$TMP_PATH'"
+
+        echo "📦 Đang cài $FILE_NAME ..."
+        su -c "pm install -r '$TMP_PATH'"
+    else
+        echo "❌ File $FILE_NAME chưa tải xong hoặc bị lỗi, bỏ qua."
+    fi
 done
 
 echo "✅ Hoàn tất tải & cài ArceusXLite"
